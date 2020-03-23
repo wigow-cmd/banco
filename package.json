@@ -1,0 +1,55 @@
+{
+  "name": "sbanco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 85,
+        "branches": 85,
+        "functions": 85,
+        "lines": 85
+      }
+    }
+  },
+  "scripts": {
+    "start": "Node_ENV=prod node src/server.js",
+    "test": "NODE_ENV=test jest --coverage --runInBand --forceExit",
+    "lint": "eslint src/** test/** --fix",
+    "secure-mode": "NODE_ENV=test jest --watch --verbose=true"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "jest": "23.6.0",
+    "supertest": "3.3.0"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "1.18.3",
+    "consign": "0.1.6",
+    "cors": "2.8.5",
+    "cross-env": "^7.0.2",
+    "express": "4.16.4",
+    "husky": "1.2.0",
+    "jwt-simple": "0.5.5",
+    "knex": "0.15.2",
+    "knex-logger": "^0.1.0",
+    "moment": "2.22.2",
+    "passport": "0.4.0",
+    "passport-jwt": "4.0.0",
+    "pg": "7.7.1",
+    "uuidv4": "2.0.0",
+    "winston": "3.1.0"
+  }
+}
